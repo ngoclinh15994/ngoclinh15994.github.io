@@ -8,9 +8,12 @@
  * Controller of yapp
  */
 angular.module('yapp')
-  .controller('LoginCtrl', function($scope, $location) {
+  .controller('LoginCtrl', function($scope, $location,$http) {
 
-    $scope.submit = function() {
+    $scope.goToRegister = function () {
+      $location.path('/register');
+    }
+    $scope.login = function() {
 
       $location.path('/dashboard');
 

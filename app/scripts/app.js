@@ -30,6 +30,12 @@ angular
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         })
+      .state('register', {
+        url: '/register',
+        parent: 'base',
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
+      })
         .state('dashboard', {
           url: '/dashboard',
           parent: 'base',
@@ -47,4 +53,7 @@ angular
             templateUrl: 'views/dashboard/reports.html'
           });
 
+  })
+  .constant("config",{
+    base_url: "http://localhost:8080"
   });
