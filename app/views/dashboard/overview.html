@@ -1,13 +1,62 @@
 <div>
-	<a ui-sref="reports" class="pull-right btn btn-primary btn-outline btn-rounded">Reports</a>
-	<h2>Overview <small>Why is Ani Theme so awesome?</small></h2>
-	<div class="jumbotron">
-		<div class="container">
-			<h1>Welcome!</h1>
-			I don't want to bloat this Ani Theme Free Edition AngularJS Admin theme with a lot of plugins. To install plugins we have bower. Let's keep it real clean!<br /><br />
-			<p>
-				<a class="btn btn-primary btn-lg btn-outline btn-rounded">Learn more</a>
-			</p>
-		</div>
-	</div>
-</div>
+    <div class="jumbotron">
+        <div>
+            <div class="search-input-box">
+                <div class="col-md-6">
+                    <strong>Order number</strong>
+                    <input type="text" class="form-control col-md-6" ng-model='requestNumber'
+                                             placeholder="Order number"></div>
+                <div class="col-md-6">
+                    <strong>Zip code</strong>
+                    <input type="text" class="form-control col-md-6" ng-model='zipCode'
+                           placeholder="Destination ZIP/Postal Code">
+                </div>
+                <div class="col-md-6">
+                    <strong>Delivery from</strong>
+                    <input type="date" class="form-control col-md-6" ng-model='dateRangeFrom'
+                           placeholder="Delivery Date From">
+                </div>
+                <div class="col-md-6">
+                    <strong>Delivery to</strong>
+                    <input type="date" class="form-control col-md-6" ng-model='dateRangeTo'
+                           placeholder="Delivery Date To">
+                </div>
+
+            </div>
+            <div style="display:inline-flex ; margin-top: 15px; padding-left: 15px" class="button-group">
+                <button class="btn btn-success mg-l-30" ng-click="checkMany()">Check</button>
+                <button class="btn btn-danger mg-l-30" ng-click="stopInterval()">Stop</button>
+                <button class="btn btn-primary mg-l-30" ng-click="export()">Export</button>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{getPercent()}}"
+                         aria-valuemin="0" aria-valuemax="100"
+                         ng-style="{width:  getPercent()+'%'}">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tracking Number</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Delivery date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in listParseData">
+                        <th scope="row">{{$index + 1}}</th>
+                        <td>{{item.trackingNumber}}</td>
+                        <td>{{item.packageStatus}}</td>
+                        <td>{{item.packageStatusDate}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>

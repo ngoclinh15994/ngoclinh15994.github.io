@@ -4,16 +4,17 @@
       <div class="col-sm-3 col-md-2 sidebar">
 
        <div class="text-center">
-        <h2 class="brand">Ani Theme <small>Free Edition</small></h2>
+        <h2 class="brand" style="color: #e2ebf0">{{username}}</h2>
+        <h3 class="brand" style="margin-top: 0px;padding-top: 0px;color: #fff92e;"><small style="color: #ffffff">Total:</small>&nbsp &nbsp{{totalChecking}}</h3>
         <img src="images/flat-avatar.png" class="user-avatar" /><br />
-        <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm">Logout</a>
+        <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm" ng-click="logout()">Logout</a>
       </div>
 
       <ul class="nav nav-sidebar">
-        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">Overview <span class="sr-only">(current)</span></a></li>
-        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports</a></li>
-        <li><a href="http://startreact.com/product/ani-theme/">Free React version</a></li>
-        <li><a href="http://www.strapui.com/ani-angularjs-theme">Angular Premium Edition</a></li>
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview"><span class="glyphicon glyphicon-scale" aria-hidden="true" style="margin-right: 15px;"></span>DashBoard<span class="sr-only">(current)</span></a></li>
+        <!--<li ng-class="{active: $state.includes('keys')}"><a ui-sref="keys">Keys</a></li>-->
+        <li><a href="https://forms.gle/9Bym7g9FcUZFmH9TA" target="_blank"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true" style="margin-right: 15px;"  style="margin-right: 15px;"></span>Feedback</a></li>
+        <!--<li><a href="http://www.strapui.com/ani-angularjs-theme">Angular Premium Edition</a></li>-->
       </ul>
 
     </div>

@@ -13,7 +13,7 @@ angular.module('yapp')
     $scope.userData = {};
     $scope.register = function() {
       console.log($scope.userData);
-      if($scope.userData.name == '' || $scope.userData.name == null){
+      if($scope.userData.username == '' || $scope.userData.username == null){
         alert("the name is required");
         return;
       }
@@ -31,8 +31,8 @@ angular.module('yapp')
       }
       $scope.userData.sourceApplication = 2;
       $http.post(config.base_url+"/api/auth/signup",$scope.userData).then(function (data) {
-        alert("register successful, we will contact you via email when we active your account !")
-        $location.path('/dashboard');
+        alert("register successful, we will contact you via email when we active your account!")
+        $location.path('/login');
       },function (error) {
         console.log(error);
         alert("register error");

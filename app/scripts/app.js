@@ -45,15 +45,18 @@ angular
           .state('overview', {
             url: '/overview',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard/overview.html'
+            templateUrl: 'views/dashboard/overview.html',
+            controller: 'OverviewController'
           })
-          .state('reports', {
-            url: '/reports',
+          .state('keys', {
+            url: '/keys',
             parent: 'dashboard',
-            templateUrl: 'views/dashboard/reports.html'
+            templateUrl: 'views/dashboard/keys.html',
+            controller: 'KeysController'
           });
 
   })
   .constant("config",{
-    base_url: "http://localhost:8080"
+    // base_url: "http://localhost:8080"
+    base_url: "https://tracking-product.eastus.cloudapp.azure.com:"
   });

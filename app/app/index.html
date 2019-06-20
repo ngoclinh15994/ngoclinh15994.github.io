@@ -11,7 +11,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+      <!--<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+      <link rel="stylesheet" href="styles/css/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="yapp">
@@ -23,6 +24,8 @@
     <div class="">
       <div ui-view></div>
     </div>
+
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script> /*
@@ -48,6 +51,10 @@
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/js-xlsx/dist/xlsx.core.min.js"></script>
+    <script src="bower_components/xlsx-model/xlsx-model.js"></script>
+    <script src="bower_components/es6-promise/promise.js"></script>
+    <script src="bower_components/alasql/dist/alasql.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -56,6 +63,11 @@
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/controllers/register.js"></script>
     <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/overview.js"></script>
+    <script src="scripts/controllers/keys.js"></script>
     <!-- endbuild -->
+  <script>
+//      const fs = require("fs");
+  </script>
   </body>
 </html>
